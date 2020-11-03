@@ -199,3 +199,4 @@ WHERE billing_state IN ('CA', 'TX', 'AZ');
 SELECT AVG(total) FROM invoice;
 
 -- 8. Get the total sum of the orders.
+SELECT COUNT(total) FROM invoice;
