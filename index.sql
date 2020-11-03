@@ -25,17 +25,27 @@ VALUES
 
 -- 3. List all the people in the person table by height from tallest to shortest.
 SELECT * FROM person
-ORDER BY height DESC
+ORDER BY height DESC;
 
 -- 4. List all the people in the person table by height from shortest to tallest.
+SELECT * FROM person
+ORDER BY height;
 
 -- 5. List all the people in the person table by age from oldest to youngest.
+SELECT * FROM person
+ORDER BY age DESC;
 
 -- 6. List all the people in the person table older than age 20.
+SELECT * FROM person
+WHERE age > 20;
 
 -- 7. List all the people in the person table that are exactly 18.
+SELECT * FROM person
+WHERE age = 18;
 
 -- 8. List all the people in the person table that are less than 20 and older than 30.
+SELECT * FROM person
+WHERE age < 20 OR age > 30;
 
 -- 9. List all the people in the person table that are not 27 (Use not equals).
 
