@@ -1,3 +1,5 @@
+
+-- TABLE-PERSON
 -- 1. Create a table called person that records a person's id, name, age, height ( in cm ), city, favorite_color.
 CREATE TABLE person (
   id SERIAL PRIMARY KEY,
@@ -70,3 +72,40 @@ WHERE favorite_color IN ('orange', 'green', 'blue');
 -- 14. List all the people in the person table where their favorite color is yellow or purple (use IN).
 SELECT * FROM person
 WHERE favorite_color IN ('yellow', 'purple');
+
+
+-- TABLE - ORDERS
+-- 1. Create a table called orders that records: order_id, person_id, product_name, product_price, quantity.
+CREATE TABLE orders (
+	order_id SERIAL PRIMARY KEY, 
+  person_id INTEGER,
+  product_name VARCHAR(200),
+  product_price FLOAT,
+  quantity INTEGER
+);
+
+-- 2. Add 5 orders to the orders table.
+INSERT INTO orders
+(person_id, product_name, product_price, quantity)
+VALUES
+(1, 'Piebald Porter', 4.50, 6),
+(2, 'Fuzz Butt Amber Ale', 4.00, 2),
+(3, 'Mixed Breed American Lager', 3.00, 12),
+(4, 'Brown Hound Milk Stout', 6.00, 1),
+(5, 'Hanging Hears Hefeweizen', 3.50, 3);
+
+-- 3. Select all the records from the orders table.
+SELECT * FROM orders;
+
+-- 4. Calculate the total number of products ordered.
+SELECT SUM(quantity) FROM orders;
+
+-- 5. Calculate the total order price.
+SELECT SUM(product_price * quantity) FROM orders;
+
+-- 6. Calculate the total order price by a single person_id.
+SELECT SUM(product_price * quantity) FROM orders
+WHERE person_id = 3;
+
+
+-- TABLE - ARTIST
